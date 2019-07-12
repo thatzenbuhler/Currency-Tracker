@@ -1,16 +1,22 @@
-# currency_tracker
+# Currency Tracker: Flutter Edition
 
-A new Flutter project.
+!! Note: this application's functionality is not yet complete. !!
 
-## Getting Started
+A multiplatform mobile app designed to make it easy for me to compare up to date currency exchange rates on a coming trip to several European countries.
 
-This project is a starting point for a Flutter application.
+## Design
 
-A few resources to get you started if this is your first Flutter project:
+This app is written using [Flutter](https://flutter.dev/), a new
+multiplatform framework from Google for building applications. The program is created entirely using the Dart programming language.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Function
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The app works by providing a homepage to the user where they are given four buttons where they choose the "active" currency that others will be compared against. When selected, a new page is created where the user enters a number. The rest of the currencies on the page automatically update with a change in input.
+
+## Screenshots
+
+TODO
+
+## Personal
+
+Working on this project is a big deal to me since it is my first deep dive into a new development framework with the goal of creating a real, meaningful app from start to finish. Taking the time to engineer the app while learning a new programming language and framework has been a tough but rewarding challenge.
