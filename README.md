@@ -7,7 +7,7 @@ A multiplatform mobile app designed to make it easy for me to compare up to date
 ## Design
 
 This app is written using [Flutter](https://flutter.dev/), a new
-multiplatform framework from Google for building applications. The program is created entirely using the Dart programming language.
+multiplatform framework from Google for building applications. The program is created entirely using the Dart programming language. Because the purpose of the app is to provide accurate, up-to-date exchange rates, it uses the Open Source API [ExchangeRatesApi.io](https://exchangeratesapi.io/) to get data via JSON.
 
 ## Function
 
