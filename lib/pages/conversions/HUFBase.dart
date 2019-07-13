@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
-class HUFBase extends StatelessWidget {
+class HUFBase extends StatefulWidget {
+  @override
+  _HUFBaseState createState() => _HUFBaseState();
+}
+
+class _HUFBaseState extends State<HUFBase>{
+  double usd = 0.0;
+  double eur = 0.0;
+  double czk = 0.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,9 +20,9 @@ class HUFBase extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Text('USD: todo', style: TextStyle(fontSize: 20)),
-            Text('EUR: todo', style: TextStyle(fontSize: 20)),
-            Text('CZK: todo', style: TextStyle(fontSize: 20)),
+            Text('USD: $usd', style: TextStyle(fontSize: 20)),
+            Text('EUR: $eur', style: TextStyle(fontSize: 20)),
+            Text('CZK: $czk', style: TextStyle(fontSize: 20)),
             Container(
               width: 140,
               child: TextField(

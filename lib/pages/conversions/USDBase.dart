@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter/services.dart';
 
-class USDBase extends StatelessWidget {
+class USDBase extends StatefulWidget {
+  @override
+  _USDBaseState createState() => _USDBaseState();
+}
+
+class _USDBaseState extends State<USDBase> {
+  double eur = 0.0;
+  double czk = 0.0;
+  double huf = 0.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,9 +20,9 @@ class USDBase extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Text('EUR: todo', style: TextStyle(fontSize: 30)),
-            Text('CZK: todo', style: TextStyle(fontSize: 30)),
-            Text('HUF: todo', style: TextStyle(fontSize: 30)),
+            Text('EUR: $eur', style: TextStyle(fontSize: 30)),
+            Text('CZK: $czk', style: TextStyle(fontSize: 30)),
+            Text('HUF: $huf', style: TextStyle(fontSize: 30)),
             Container(
               width: 140,
               child: TextField(
@@ -29,6 +37,11 @@ class USDBase extends StatelessWidget {
                 ),
                 onChanged: (String input) {
                   print('Changed');
+                  setState(() {
+                    eur++;
+                    czk++;
+                    huf++;
+                  });
                 },
               ),
             )
