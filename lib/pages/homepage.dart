@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:currency_tracker/pages/conversions/USDBase.dart';
-import 'package:currency_tracker/pages/conversions/EURBase.dart';
-import 'package:currency_tracker/pages/conversions/CZKBase.dart';
-import 'package:currency_tracker/pages/conversions/HUFBase.dart';
+import 'package:currency_tracker/pages/conversions.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -26,7 +23,8 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => USDBase()),
+                    MaterialPageRoute(
+                        builder: (context) => ConversionPage(currencyType: 1)),
                   );
                 },
               ),
@@ -38,7 +36,8 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => EURBase()),
+                    MaterialPageRoute(
+                        builder: (context) => ConversionPage(currencyType: 2)),
                   );
                 },
               ),
@@ -50,7 +49,8 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CZKBase()),
+                    MaterialPageRoute(
+                        builder: (context) => ConversionPage(currencyType: 3)),
                   );
                 },
               ),
@@ -62,7 +62,8 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HUFBase()),
+                    MaterialPageRoute(
+                        builder: (context) => ConversionPage(currencyType: 4)),
                   );
                 },
               ),
