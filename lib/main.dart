@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:currency_tracker/pages/homepage.dart';
+import 'package:currency_tracker/currencydata.dart';
 
 void main() => runApp(MyApp());
 

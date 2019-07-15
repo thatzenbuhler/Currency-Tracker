@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:currency_tracker/pages/conversions.dart';
+import 'package:currency_tracker/currencydata.dart';
 
 class HomePage extends StatelessWidget {
   @override

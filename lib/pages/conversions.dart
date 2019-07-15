@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:currency_tracker/currencydata.dart';
 
 class ConversionPage extends StatefulWidget {
   final int currencyType;
 
-  ConversionPage({Key key, @required this.currencyType}) : super (key: key);
+  ConversionPage({Key key, @required this.currencyType}) : super(key: key);
 
   @override
   _ConversionPageState createState() => _ConversionPageState();
@@ -36,10 +37,9 @@ class _ConversionPageState extends State<ConversionPage> {
                 style: TextStyle(fontSize: 30),
                 textAlign: TextAlign.center,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter Here',
-                  hintStyle: TextStyle(fontSize: 20)
-                ),
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter Here',
+                    hintStyle: TextStyle(fontSize: 20)),
                 onChanged: (String input) {
                   print('Changed');
                   setState(() {
@@ -55,51 +55,56 @@ class _ConversionPageState extends State<ConversionPage> {
   }
 
   void setCurrency(int arg) {
+    assert(arg >= 1 && arg <= 4);
     switch (arg) {
-      case 1: {
-        currencyName = "USD";
-        curName1 = "EUR";
-        curName2 = "CZK";
-        curName3 = "HUF";
-        // TODO: apply rates here
-        cur1 = 0.0;
-        cur2 = 0.0;
-        cur3 = 0.0;
-        break;
-      }
-       case 2: {
-        currencyName = "EUR";
-        curName1 = "USD";
-        curName2 = "CZK";
-        curName3 = "HUF";
-        // TODO: apply rates here
-        cur1 = 0.0;
-        cur2 = 0.0;
-        cur3 = 0.0;
-        break;
-      }
-        case 3: {
-        currencyName = "CZK";
-        curName1 = "USD";
-        curName2 = "EUR";
-        curName3 = "HUF";
-        // TODO: apply rates here
-        cur1 = 0.0;
-        cur2 = 0.0;
-        cur3 = 0.0;
-        break;
-      }
-         case 4: {
-        currencyName = "HUF";
-        curName1 = "USD";
-        curName2 = "EUR";
-        curName3 = "CZK";
-        // TODO: apply rates here
-        cur1 = 0.0;
-        cur2 = 0.0;
-        cur3 = 0.0;
-        break;
-      }
+      case 1:
+        {
+          currencyName = "USD";
+          curName1 = "EUR";
+          curName2 = "CZK";
+          curName3 = "HUF";
+          // TODO: apply rates here
+          cur1 = 0.0;
+          cur2 = 0.0;
+          cur3 = 0.0;
+          break;
+        }
+      case 2:
+        {
+          currencyName = "EUR";
+          curName1 = "USD";
+          curName2 = "CZK";
+          curName3 = "HUF";
+          // TODO: apply rates here
+          cur1 = 0.0;
+          cur2 = 0.0;
+          cur3 = 0.0;
+          break;
+        }
+      case 3:
+        {
+          currencyName = "CZK";
+          curName1 = "USD";
+          curName2 = "EUR";
+          curName3 = "HUF";
+          // TODO: apply rates here
+          cur1 = 0.0;
+          cur2 = 0.0;
+          cur3 = 0.0;
+          break;
+        }
+      case 4:
+        {
+          currencyName = "HUF";
+          curName1 = "USD";
+          curName2 = "EUR";
+          curName3 = "CZK";
+          // TODO: apply rates here
+          cur1 = 0.0;
+          cur2 = 0.0;
+          cur3 = 0.0;
+          break;
+        }
     }
   }
 }
