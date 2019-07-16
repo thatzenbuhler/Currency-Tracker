@@ -49,7 +49,7 @@ class Rates {
   double nOK;
   double nZD;
   double zAR;
-  int uSD;
+  double usd;
   double mXN;
   double sGD;
   double aUD;
@@ -84,7 +84,7 @@ class Rates {
       this.nOK,
       this.nZD,
       this.zAR,
-      this.uSD,
+      this.usd,
       this.mXN,
       this.sGD,
       this.aUD,
@@ -119,7 +119,7 @@ class Rates {
     nOK = json['NOK'];
     nZD = json['NZD'];
     zAR = json['ZAR'];
-    uSD = json['USD'];
+    usd = json['USD'];
     mXN = json['MXN'];
     sGD = json['SGD'];
     aUD = json['AUD'];
@@ -156,7 +156,7 @@ class Rates {
     data['NOK'] = this.nOK;
     data['NZD'] = this.nZD;
     data['ZAR'] = this.zAR;
-    data['USD'] = this.uSD;
+    data['USD'] = this.usd;
     data['MXN'] = this.mXN;
     data['SGD'] = this.sGD;
     data['AUD'] = this.aUD;

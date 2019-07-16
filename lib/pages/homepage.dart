@@ -3,8 +3,19 @@ import 'package:currency_tracker/pages/conversions.dart';
 import 'package:currency_tracker/currencydata.dart';
 
 class HomePage extends StatelessWidget {
+  final Future<CurrencyData> rateData;
+
+  HomePage({Key key, @required this.rateData}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    CurrencyData rates;
+    String date;
+    this.rateData.then((result) {
+      rates = result;
+      date = result.date;
+    });
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -25,7 +36,8 @@ class HomePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ConversionPage(currencyType: 1)),
+                        builder: (context) =>
+                            ConversionPage(currencyType: 1, rateData: rates)),
                   );
                 },
               ),
@@ -38,7 +50,8 @@ class HomePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ConversionPage(currencyType: 2)),
+                        builder: (context) =>
+                            ConversionPage(currencyType: 2, rateData: rates)),
                   );
                 },
               ),
@@ -51,7 +64,8 @@ class HomePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ConversionPage(currencyType: 3)),
+                        builder: (context) =>
+                            ConversionPage(currencyType: 3, rateData: rates)),
                   );
                 },
               ),
@@ -64,11 +78,13 @@ class HomePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ConversionPage(currencyType: 4)),
+                        builder: (context) =>
+                            ConversionPage(currencyType: 4, rateData: rates)),
                   );
                 },
               ),
-              Text('Rates: DATE HERE', style: TextStyle(fontSize: 18)),
+              Text('Rates: ${(date != null) ? date : "N/A"}',
+                  style: TextStyle(fontSize: 18)),
             ],
           ),
         ),
