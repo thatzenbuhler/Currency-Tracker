@@ -10,81 +10,97 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CurrencyData rates;
-    String date;
     this.rateData.then((result) {
       rates = result;
-      date = result.date;
     });
 
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text('Currency Tracker'),
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.blueGrey,
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Text('Choose Base Currency:', style: TextStyle(fontSize: 20)),
-              RaisedButton(
-                child: Text(
-                  'USD',
-                  style: TextStyle(fontSize: 20),
+              ButtonTheme(
+                buttonColor: Colors.green,
+                minWidth: 180,
+                height: 70,
+                child: RaisedButton(
+                  child: Text(
+                    'USD',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              ConversionPage(currencyType: 1, rateData: rates)),
+                    );
+                  },
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            ConversionPage(currencyType: 1, rateData: rates)),
-                  );
-                },
               ),
-              RaisedButton(
-                child: Text(
-                  'EUR',
-                  style: TextStyle(fontSize: 20),
+              ButtonTheme(
+                buttonColor: Colors.lightBlue,
+                minWidth: 180,
+                height: 70,
+                child: RaisedButton(
+                  child: Text(
+                    'EUR',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              ConversionPage(currencyType: 2, rateData: rates)),
+                    );
+                  },
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            ConversionPage(currencyType: 2, rateData: rates)),
-                  );
-                },
               ),
-              RaisedButton(
-                child: Text(
-                  'CZK',
-                  style: TextStyle(fontSize: 20),
+              ButtonTheme(
+                buttonColor: Colors.redAccent,
+                minWidth: 180,
+                height: 70,
+                child: RaisedButton(
+                  child: Text(
+                    'CZK',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              ConversionPage(currencyType: 3, rateData: rates)),
+                    );
+                  },
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            ConversionPage(currencyType: 3, rateData: rates)),
-                  );
-                },
               ),
-              RaisedButton(
-                child: Text(
-                  'HUF',
-                  style: TextStyle(fontSize: 20),
+              ButtonTheme(
+                buttonColor: Colors.lightGreen,
+                minWidth: 180,
+                height: 70,
+                child: RaisedButton(
+                  child: Text(
+                    'HUF',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              ConversionPage(currencyType: 4, rateData: rates)),
+                    );
+                  },
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            ConversionPage(currencyType: 4, rateData: rates)),
-                  );
-                },
               ),
-              Text('Rates: ${(date != null) ? date : "N/A"}',
-                  style: TextStyle(fontSize: 18)),
             ],
           ),
         ),

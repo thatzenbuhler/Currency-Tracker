@@ -18,6 +18,7 @@ class _ConversionPageState extends State<ConversionPage> {
   double cur1 = 0.0, cur2 = 0.0, cur3 = 0.0;
   double curDisp1 = 0.0, curDisp2 = 0.0, curDisp3 = 0.0;
   String curName1 = "", curName2 = "", curName3 = "";
+  Color appBarColor = Colors.blueGrey;
   double modifier = 0.0;
 
   @override
@@ -26,48 +27,55 @@ class _ConversionPageState extends State<ConversionPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Enter Amount in $currencyName"),
+        backgroundColor: appBarColor,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Text('$curName1: $curDisp1', style: TextStyle(fontSize: 30)),
-            Text('$curName2: $curDisp2', style: TextStyle(fontSize: 30)),
-            Text('$curName3: $curDisp3', style: TextStyle(fontSize: 30)),
-            Container(
-              width: 140,
-              child: TextField(
-                autofocus: true,
-                keyboardType: TextInputType.number,
-                style: TextStyle(fontSize: 30),
-                textAlign: TextAlign.center,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Enter Here',
-                    hintStyle: TextStyle(fontSize: 20)),
-                onChanged: (String input) {
-                  if (input.length == 0) {
-                    setState(() {
-                      curDisp1 = curDisp2 = curDisp3 = 0.0;
-                    });
-                  }
-                  modifier = double.parse(input);
-                  if (modifier != null) {
-                    setState(() {
-                      curDisp1 =
-                          double.parse((cur1 * modifier).toStringAsFixed(2));
-                      curDisp2 =
-                          double.parse((cur2 * modifier).toStringAsFixed(2));
-                      curDisp3 =
-                          double.parse((cur3 * modifier).toStringAsFixed(2));
-                    });
-                  }
-                },
-              ),
-            )
-          ],
+      body: Column(children: <Widget>[
+        Container(alignment: Alignment.topLeft, child: Text('Rates: ' + widget.rateData.date)),
+        Expanded(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Text('$curName1: $curDisp1', style: TextStyle(fontSize: 30)),
+                Text('$curName2: $curDisp2', style: TextStyle(fontSize: 30)),
+                Text('$curName3: $curDisp3', style: TextStyle(fontSize: 30)),
+                Container(
+                  width: 140,
+                  child: TextField(
+                    autofocus: true,
+                    keyboardType: TextInputType.number,
+                    style: TextStyle(fontSize: 30),
+                    textAlign: TextAlign.center,
+                    maxLength: 8,
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Enter Here',
+                        hintStyle: TextStyle(fontSize: 20)),
+                    onChanged: (String input) {
+                      if (input.length == 0) {
+                        setState(() {
+                          curDisp1 = curDisp2 = curDisp3 = 0.0;
+                        });
+                      }
+                      modifier = double.parse(input);
+                      if (modifier != null) {
+                        setState(() {
+                          curDisp1 = double.parse(
+                              (cur1 * modifier).toStringAsFixed(2));
+                          curDisp2 = double.parse(
+                              (cur2 * modifier).toStringAsFixed(2));
+                          curDisp3 = double.parse(
+                              (cur3 * modifier).toStringAsFixed(2));
+                        });
+                      }
+                    },
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
-      ),
+      ]),
     );
   }
 
@@ -76,6 +84,7 @@ class _ConversionPageState extends State<ConversionPage> {
     switch (arg) {
       case 1:
         {
+          appBarColor = Colors.green;
           currencyName = "USD";
           curName1 = "EUR";
           curName2 = "CZK";
@@ -87,6 +96,7 @@ class _ConversionPageState extends State<ConversionPage> {
         }
       case 2:
         {
+          appBarColor = Colors.lightBlue;
           currencyName = "EUR";
           curName1 = "USD";
           curName2 = "CZK";
@@ -98,6 +108,7 @@ class _ConversionPageState extends State<ConversionPage> {
         }
       case 3:
         {
+          appBarColor = Colors.redAccent;
           currencyName = "CZK";
           curName1 = "USD";
           curName2 = "EUR";
@@ -109,6 +120,7 @@ class _ConversionPageState extends State<ConversionPage> {
         }
       case 4:
         {
+          appBarColor = Colors.lightGreen;
           currencyName = "HUF";
           curName1 = "USD";
           curName2 = "EUR";
