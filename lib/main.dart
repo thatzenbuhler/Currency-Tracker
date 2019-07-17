@@ -1,4 +1,6 @@
 // Tyler Hatzenbuhler
+// t.hatzenbuhler@gmail.com
+// Created 2019
 
 import 'dart:async';
 import 'dart:convert';

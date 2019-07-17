@@ -1,3 +1,7 @@
+// Tyler Hatzenbuhler
+// t.hatzenbuhler@gmail.com
+// Created 2019
+
 class CurrencyData {
   Rates rates;
   String base;

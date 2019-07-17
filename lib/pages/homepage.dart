@@ -1,3 +1,7 @@
+// Tyler Hatzenbuhler
+// t.hatzenbuhler@gmail.com
+// Created 2019
+
 import 'package:flutter/material.dart';
 import 'package:currency_tracker/pages/conversions.dart';
 import 'package:currency_tracker/currencydata.dart';
