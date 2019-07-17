@@ -1,13 +1,13 @@
 # Currency Tracker: Flutter Edition
 
-!! Note: this application's functionality is not yet complete. !!
-
 A multiplatform mobile app designed to make it easy for me to compare up to date currency exchange rates on a coming trip to several European countries.
 
 ## Design
 
 This app is written using [Flutter](https://flutter.dev/), a new
-multiplatform framework from Google for building applications. The program is created entirely using the Dart programming language. Because the purpose of the app is to provide accurate, up-to-date exchange rates, it uses the Open Source API [ExchangeRatesApi.io](https://exchangeratesapi.io/) to get data via JSON.
+multiplatform framework from Google for building applications. The program is created entirely using the Dart programming language. Because the purpose of the app is to provide accurate, up-to-date exchange rates, it uses the Open Source API [ExchangeRatesApi.io](https://exchangeratesapi.io/) to get data via JSON. Since the http request requires active internet, the rates from July-16 are hard coded in case of no connection. Caching previous successful connections could be a possible feature eventually.
+
+Because the API call returns a much larger list of exchange rates, it is easy to tweak which currencies are used from a development standpoint. Perhaps I could add greater choice functionality for many more use cases.
 
 ## Function
 
@@ -15,7 +15,9 @@ The app works by providing a homepage to the user where they are given four butt
 
 ## Screenshots
 
-TODO
+![Home Page](https://github.com/thatzenbuhler/Currency-Tracker-Flutter/blob/master/homepage.png)
+
+![Conversions Page](https://github.com/thatzenbuhler/Currency-Tracker-Flutter/blob/master/conversions.png)
 
 ## Personal
 
