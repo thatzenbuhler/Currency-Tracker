@@ -16,6 +16,7 @@ class HomePage extends StatelessWidget {
 
     return MaterialApp(
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text('Currency Tracker'),
           backgroundColor: Colors.blueGrey,
@@ -27,8 +28,8 @@ class HomePage extends StatelessWidget {
               Text('Choose Base Currency:', style: TextStyle(fontSize: 20)),
               ButtonTheme(
                 buttonColor: Colors.green,
-                minWidth: 180,
-                height: 70,
+                minWidth: 200,
+                height: 80,
                 child: RaisedButton(
                   child: Text(
                     'USD',
@@ -46,8 +47,8 @@ class HomePage extends StatelessWidget {
               ),
               ButtonTheme(
                 buttonColor: Colors.lightBlue,
-                minWidth: 180,
-                height: 70,
+                minWidth: 200,
+                height: 80,
                 child: RaisedButton(
                   child: Text(
                     'EUR',
@@ -65,8 +66,8 @@ class HomePage extends StatelessWidget {
               ),
               ButtonTheme(
                 buttonColor: Colors.redAccent,
-                minWidth: 180,
-                height: 70,
+                minWidth: 200,
+                height: 80,
                 child: RaisedButton(
                   child: Text(
                     'CZK',
@@ -84,8 +85,8 @@ class HomePage extends StatelessWidget {
               ),
               ButtonTheme(
                 buttonColor: Colors.lightGreen,
-                minWidth: 180,
-                height: 70,
+                minWidth: 200,
+                height: 80,
                 child: RaisedButton(
                   child: Text(
                     'HUF',
