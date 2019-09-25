@@ -23,8 +23,8 @@ Future<CurrencyData> fetchPost() async {
     }
   } catch (e) {
     return Future<CurrencyData>.value(CurrencyData(
-        rates: Rates(usd: 1.0, eur: 0.8910, czk: 22.79, huf: 290.34),
-        date: '2019-07-16 (Offline)'));
+        rates: Rates(usd: 1.0, eur: 0.9066, hrk: 6.710),
+        date: '2019-09-20 (Offline)'));
   }
 }
 

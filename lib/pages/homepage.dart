@@ -40,12 +40,14 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              ConversionPage(currencyType: 1, rateData: rates)),
-                    );
+                    if (rates != null) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ConversionPage(
+                                currencyType: 1, rateData: rates)),
+                      );
+                    }
                   },
                 ),
               ),
@@ -59,12 +61,14 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              ConversionPage(currencyType: 2, rateData: rates)),
-                    );
+                    if (rates != null) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ConversionPage(
+                                currencyType: 2, rateData: rates)),
+                      );
+                    }
                   },
                 ),
               ),
@@ -74,19 +78,22 @@ class HomePage extends StatelessWidget {
                 height: 80,
                 child: RaisedButton(
                   child: Text(
-                    'CZK',
+                    'HRK',
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              ConversionPage(currencyType: 3, rateData: rates)),
-                    );
+                    if (rates != null) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ConversionPage(
+                                currencyType: 3, rateData: rates)),
+                      );
+                    }
                   },
                 ),
               ),
+              /*
               ButtonTheme(
                 buttonColor: Colors.lightGreen,
                 minWidth: 200,
@@ -105,7 +112,7 @@ class HomePage extends StatelessWidget {
                     );
                   },
                 ),
-              ),
+              ),*/
             ],
           ),
         ),

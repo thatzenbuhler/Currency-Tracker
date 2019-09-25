@@ -34,7 +34,9 @@ class _ConversionPageState extends State<ConversionPage> {
         backgroundColor: appBarColor,
       ),
       body: Column(children: <Widget>[
-        Container(alignment: Alignment.topLeft, child: Text('Rates: ' + widget.rateData.date)),
+        Container(
+            alignment: Alignment.topLeft,
+            child: Text('Rates: ' + widget.rateData.date)),
         Expanded(
           child: Center(
             child: Column(
@@ -113,15 +115,16 @@ class _ConversionPageState extends State<ConversionPage> {
       case 3:
         {
           appBarColor = Colors.redAccent;
-          currencyName = "CZK";
+          currencyName = "HRK";
           curName1 = "USD";
           curName2 = "EUR";
           curName3 = "HUF";
-          cur1 = widget.rateData.rates.usd / widget.rateData.rates.czk;
-          cur2 = widget.rateData.rates.eur / widget.rateData.rates.czk;
-          cur3 = widget.rateData.rates.huf / widget.rateData.rates.czk;
+          cur1 = widget.rateData.rates.usd / widget.rateData.rates.hrk;
+          cur2 = widget.rateData.rates.eur / widget.rateData.rates.hrk;
+          cur3 = widget.rateData.rates.huf / widget.rateData.rates.hrk;
           break;
         }
+      /*
       case 4:
         {
           appBarColor = Colors.lightGreen;
@@ -134,6 +137,7 @@ class _ConversionPageState extends State<ConversionPage> {
           cur3 = widget.rateData.rates.czk / widget.rateData.rates.huf;
           break;
         }
+        */
     }
   }
 }
